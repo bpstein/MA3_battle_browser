@@ -16,22 +16,17 @@ get '/footoo' do
   "YOYOYOYOYp"
 end
 
-# get '/cat' do
 
-#   <p> Hi </p>
-
-  # <img src="http://bit.ly/1eze8aE">
-
-
-
-#   <div class="brd"> <img src="http://bit.ly/1eze8aE" alt="Cat" style="width:304px;height:228px;"> </div>
-# <style contenteditable>
-#   .brd { border: medium dashed red;}
-# </style>
-
-get '/cat' do
+get '/random-cat' do
   @kitty = ["Amigo", "Oscar", "Viking"].sample
   erb(:index)
+ end
+
+ get '/named-cat' do
+   p params
+   @kitty = params[:name]
+   erb(:index)
+
  end
 
 
